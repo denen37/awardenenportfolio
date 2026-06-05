@@ -1,16 +1,46 @@
-# React + Vite
+# Awar Denen Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website. This website showcases my professional experience, technical skills, projects, certifications, and growth journey as a **Software Developer** and **Robotics Engineer**.
 
-Currently, two official plugins are available:
+The portfolio is built as a modern **Single Page Application (SPA)** using React and is deployed on GitHub Pages. It serves as a central hub for presenting my work, highlighting key achievements, and providing an easy way for potential employers, collaborators, and recruiters to learn more about me.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+The website includes the following sections:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Navbar** – Easy navigation between sections of the portfolio.
+* **Hero** – A brief introduction and overview of who I am.
+* **About Me** – Information about my background, education, and career journey.
+* **Skills** – Technical skills, tools, and technologies I work with.
+* **Projects** – Selected software, robotics, and engineering projects with descriptions and technologies used.
+* **Certifications & Achievements** – Professional certifications, awards, and notable accomplishments.
+* **Contact** – Ways to connect with me professionally.
+* **Footer** – Additional links and copyright information.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* Tailwind CSS
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+* GitHub Pages
+
+## Purpose
+
+The primary purpose of this portfolio is to:
+
+* Showcase my technical and professional experience.
+* Highlight projects and achievements.
+* Demonstrate my frontend development skills.
+* Provide a platform for networking and career opportunities.
+
+## Live Website
+
+Visit the portfolio here:
+
+*Add your GitHub Pages URL here.*
+
+---
+
+© 2026 Awar Denen. All rights reserved.
