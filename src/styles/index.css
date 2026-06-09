@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* @theme {
+  --color-background: #111827;
+  --color-surface: #1A2430;
+  --color-card: #25313D;
+
+  --color-primary: #00D4B0;
+  --color-primary-glow: #00F5D4;
+
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #B8C4CC;
+  --color-text-muted: #7C8792;
+} */
+
+@theme {
+  /* Base Layers */
+  --color-background: #0A112B;
+  --color-surface: #0F1D47;
+  --color-card: #162B6B;
+
+  /* Brand Colors */
+  --color-primary: #122560;
+  --color-primary-hover: #1B357F;
+  --color-primary-light: #2E4DA5;
+
+  --color-brand-primary: #0A3B93;
+  --color-brand-secondary: #353D46;
+
+  /* Accent Colors */
+  --color-accent: #4F8CFF;
+  --color-accent-light: #7AA9FF;
+
+  /* Text */
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #94A3B8;
+
+  /* Borders */
+  --color-border: #243A7A;
+}
+
+:root {
+  --navbar-height: 90px;
+}
+
+body, html{
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+section, footer{
+  padding: 30px 100px;
+}
+
+@media screen and (max-width: 450px) {
+  section, footer {
+    padding: 15px 30px;
+  }
+}
+
+.dark {
+  --color-primary: #60a5fa;
+  --color-background: #0f172a;
+  --color-text-primary: #e0e2e4;
+}
+
+@layer base {
+  * {
+    font-family: 'Maven Pro', sans-serif;
+  }
+}
+
+
