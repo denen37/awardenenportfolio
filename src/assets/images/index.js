@@ -1,6 +1,7 @@
 // src/assets/images/index.js
 import logo from "./logo/logo6-nobg-icon.png";
 import profile from "./profile/profile-pic.png";
+import profile2 from "./profile/profile-pic2.png"
 import portrait from "./profile/portrait.png";
 import web_dev from "./projects/web_dev.svg"
 import charts from "./projects/charts.svg"
@@ -12,6 +13,7 @@ import project_tastetorial from "./projects/project_tastetorial.jpg"
 export const images = {
   logo,
   profile,
+  profile2,
   portrait,
   web_dev,
   charts,

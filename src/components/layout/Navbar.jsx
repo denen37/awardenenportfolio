@@ -19,7 +19,7 @@ const Navbar = () => {
       href: '#about',
     },{
       name: 'Contact',
-      href: '#',
+      href: '#contact',
     }]
   return (
     <nav className='sticky top-0 z-50 bg-background'>
