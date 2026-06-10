@@ -6,6 +6,8 @@ import web_dev from "./projects/web_dev.svg"
 import charts from "./projects/charts.svg"
 import machine_design from "./projects/machine_design.png"
 import machine_learning from "./projects/machine_learning.svg"
+import project_acepick from "./projects/project_acepick.jpg"
+import project_tastetorial from "./projects/project_tastetorial.jpg"
 
 export const images = {
   logo,
@@ -14,5 +16,7 @@ export const images = {
   web_dev,
   charts,
   machine_design,
-  machine_learning
+  machine_learning,
+  project_acepick,
+  project_tastetorial
 };

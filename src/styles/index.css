@@ -62,12 +62,12 @@ h1, h2, h3 {
 }
 
 section, footer{
-  padding: 30px 100px;
+  padding: 50px 100px;
 }
 
 @media screen and (max-width: 450px) {
   section, footer {
-    padding: 15px 30px;
+    padding: 20px 30px;
   }
 }
 
@@ -77,10 +77,31 @@ section, footer{
   --color-text-primary: #e0e2e4;
 }
 
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-surface);
+  border-radius: 999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
 @layer base {
   * {
     font-family: 'Maven Pro', sans-serif;
   }
+}
+
+@layer components {
+
 }
 
 
