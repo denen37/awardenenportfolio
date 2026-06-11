@@ -71,12 +71,12 @@ section, .footer-inner{
   }
 }
 
-.dark {
+/* .dark {
   --color-primary: #60a5fa;
   --color-background: #0f172a;
   --color-text-primary: #e0e2e4;
-}
-
+} */
+/* 
 .custom-scrollbar::-webkit-scrollbar {
   height: 6px;
 }
@@ -92,7 +92,7 @@ section, .footer-inner{
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent);
-}
+} */
 
 @layer base {
   * {

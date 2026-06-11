@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Tab from '../common/Tab';
 import { images } from '../../assets/images';
 import { projects } from '../../data/projects';
 
 const Projects = () => {
-    const [activeTab, setActiveTab] = useState("");
+  const [activeTab, setActiveTab] = useState("");
 
-    const filteredProjects = projects.filter((p) => !activeTab || p.category === activeTab)
+  const filteredProjects = projects.filter((p) => !activeTab || p.category === activeTab)
 
   return (
-    <section id="projects" className='bg-surface'>
+    <section id="projects" className='bg-surface' data-aos="fade-up">
       <div className='flex flex-col items-start gap-4'>
         <h1 className='text-xl'><span className='text-accent'>Projects</span> I have done.</h1>
         <p className='text-xs text-text-secondary max-w-[900px]'>

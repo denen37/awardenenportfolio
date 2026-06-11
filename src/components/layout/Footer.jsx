@@ -12,12 +12,12 @@ const Footer = () => {
                 className="w-20 h-20 object-contain" 
                 />
         </div>
-        <div className="flex flex-col sm:flex-row gap-5 text-text-secondary">
-            <div className="flex flex-col gap-1 py-4 px-5 sm:px-10 border-b sm:border-b-0 sm:border-r border-accent">
+        <div className="flex flex-col md:flex-row gap-5 text-text-secondary">
+            <div className="flex flex-col gap-1 py-4 px-5 sm:px-10 border-b md:border-b-0 md:border-r border-accent">
                 <p className="text-xs">Web Developer</p>
                 <p className="text-xs">Robotics Engineer</p>
             </div>
-            <div className="flex flex-col gap-1 py-4 px-5 sm:px-10 border-b sm:border-b-0 sm:border-r border-accent">
+            <div className="flex flex-col gap-1 py-4 px-5 sm:px-10 border-b md:border-b-0 md:border-r border-accent">
                 <a href="" className="text-xs">Home</a>
                 <a href="" className="text-xs">Services</a>
                 <a href="" className="text-xs">About</a>

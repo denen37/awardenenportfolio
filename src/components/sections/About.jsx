@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { images } from '../../assets/images'
 
 const About = () => {
     return (
-        <section id='about'>
+        <section id='about' data-aos="fade-up">
             <div className='flex flex-col items-center gap-1'>
                 <p className='text-xs  text-text-secondary'>MY BIO</p>
                 <h1 className='text-xl'>About <span className='text-accent'>Me</span></h1>

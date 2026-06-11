@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { skills } from '../../data/skills';
 
 const Skills = () => {
-const ratingToWidth = (rating) => Math.floor((rating * 100) / 5);
+  const ratingToWidth = (rating) => Math.floor((rating * 100) / 5);
 
   return (
-    <section id="skills" className='max-w-[900px]'>
+    <section id="skills" className='max-w-[900px]' data-aos="fade-up">
       <div>
         <h1 className='text-xl text-accent'>Skills</h1>
         <p className='text-xs text-text-secondary'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid nobis ullam adipisci doloremque inventore ab, velit a mollitia ipsam officiis! Pariatur in aut a vero qui facere! Officia, provident veniam?</p>

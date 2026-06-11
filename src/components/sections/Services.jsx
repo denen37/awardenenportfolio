@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { services } from '../../data/services';
 
 
 const Services = () => {
+
   return (
-    <section id="services">
+    <section id="services" data-aos="fade-up">
         <div className='flex flex-col items-center gap-1'>
             <p className='text-xs  text-text-secondary'>SERVICES</p>
             <h1 className='text-xl'>What <span className='text-accent'>I do.</span></h1>
