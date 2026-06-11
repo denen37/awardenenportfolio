@@ -4,7 +4,7 @@ import { AiFillLinkedin, AiFillFacebook, AiOutlineX} from "react-icons/ai";
 const Footer = () => {
   return (
     <footer className="pt-5">
-      <div className="footer-inner flex flex-wrap justify-between border-b border-accent">
+      <div className="footer-inner flex flex-wrap justify-between gap-5 border-b border-accent">
         <div>
             <img 
                 src={images.logo} 

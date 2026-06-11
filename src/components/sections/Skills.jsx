@@ -24,7 +24,7 @@ const Skills = () => {
             </div>
             </React.Fragment>
         ))}
-</div>
+      </div>
       </div>
     </section>
   );

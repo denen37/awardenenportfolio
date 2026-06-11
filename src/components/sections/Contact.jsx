@@ -1,7 +1,34 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {AiOutlineMail, AiOutlineWhatsApp, AiOutlineEnvironment} from "react-icons/ai";
+import emailjs from 'emailjs-com'
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: ""
+    })
+    const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+    .then((result) => {
+        alert("Message Sent!");
+        setFormData({
+            name: "",
+            email: "",
+            message: ""
+        })
+    }).catch((error) => {
+        console.log(error);
+        alert("Oops! Something went wrong. Try again later.");
+    })
+}
+
   return (
     <section id="contact" className='bg-surface' data-aos="fade-up">
         <div className='flex flex-col items-center gap-4'>
@@ -40,23 +67,27 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex flex-col gap-2'>
-            <div className="flex flex-col gap-1">
+            <form className='flex flex-col gap-2' onSubmit={handleSubmit}>
+                <div className="flex flex-col gap-1">
                     <label
-                        htmlFor="fullName"
+                        htmlFor="name"
                         className="text-xs font-medium text-text-primary"
                     >
                         Full Name
                     </label>
 
                     <input
-                        id="fullName"
+                        id="name"
+                        name="name"
                         type="text"
+                        value={formData.name}
+                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        required
                         placeholder="John Doe"
                         className="w-full rounded-lg border border-surface bg-background px-3 py-2 text-sm text-text-primary outline-none transition-all duration-300 placeholder:text-text-secondary focus:border-accent focus:ring-2 focus:ring-accent/20 placeholder:text-text-muted"/>
                 </div>
 
-            <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1">
                     <label
                         htmlFor="email"
                         className="text-xs font-medium text-text-primary"
@@ -66,7 +97,11 @@ const Contact = () => {
 
                     <input
                         id="email"
+                        name="email"
                         type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        required
                         placeholder="email@example.com"
                         className="w-full rounded-lg border border-surface bg-background px-3 py-2 text-sm text-text-primary outline-none transition-all duration-300 placeholder:text-text-secondary focus:border-accent focus:ring-2 focus:ring-accent/20 placeholder:text-text-muted"/>
                 </div>
@@ -81,12 +116,20 @@ const Contact = () => {
 
                     <textarea
                         id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={(e) => setFormData({...formData, message: e.target.value})}
+                        required
                         placeholder="Message..."
                         className="w-full rounded-lg border border-surface bg-background px-3 py-2 text-sm text-text-primary outline-none transition-all duration-300 placeholder:text-text-secondary focus:border-accent focus:ring-2 focus:ring-accent/20 placeholder:text-text-muted"
                         rows={5}
                         />
                 </div>
-            </div>
+
+                <div className='mt-2 flex justify-center'>
+                    <button type="submit" className='px-4 py-2 rounded-sm bg-accent text-background cursor-pointer hover:bg-accent-light active:scale-90 transition-all duration-300 ease-in-out'>Send Message</button>
+                </div>
+            </form>
         </div>
       </div>
     </section>

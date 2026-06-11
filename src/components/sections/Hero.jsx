@@ -19,7 +19,7 @@ const Hero = () => {
             machine learning, and autonomous systems.
           </p>
           <div className='mt-10 mb-2'>
-            <a className='px-4 py-2 rounded-sm bg-accent text-background cursor-pointer hover:bg-accent-light active:scale-90 transition-all duration-300 ease-in-out'>Let's Chat</a>
+            <a href="#contact" className='px-4 py-2 rounded-sm bg-accent text-background cursor-pointer hover:bg-accent-light active:scale-90 transition-all duration-300 ease-in-out'>Let's Chat</a>
           </div>
         </div>
         <div className='flex items-center gap-2 mt-20'>

@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Tab from '../common/Tab';
 import { images } from '../../assets/images';
 import { projects } from '../../data/projects';
+import Modal from '../common/Modal';
+
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("");
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const filteredProjects = projects.filter((p) => !activeTab || p.category === activeTab)
 
@@ -27,7 +30,8 @@ const Projects = () => {
             .map((project, index) => (
               <div
                 key={index}
-                className="px-5 py-4 max-w-60 flex flex-col items-start gap-2 bg-card rounded-lg"
+                onClick={() => setSelectedProject(project)}
+                className="px-5 py-4 max-w-60 flex flex-col items-start gap-2 bg-card rounded-lg cursor-pointer"
               >
                 <div className="h-40 overflow-hidden rounded-t-lg">
                   <img
@@ -51,6 +55,51 @@ const Projects = () => {
             </div>)
         }
       </div>
+
+      <Modal
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+      >
+        {selectedProject && (
+          <div>
+            <div className="h-56 overflow-y-auto scrollbar-thin">
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.name}
+                className="w-full rounded-lg object-cover"
+              />
+            </div>
+
+            <h2 className="mt-4 text-2xl font-semibold text-text-primary">
+              {selectedProject.name}
+            </h2>
+
+            <p className="mt-3 text-sm text-text-secondary">
+              {selectedProject.description}
+            </p>
+
+            <div className="mt-4 flex gap-3">
+              <a 
+              href={selectedProject.github}
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs text-accent underline hover:text-accent-light transition-colors"
+              >
+                Github
+              </a>
+
+              <a 
+              href={selectedProject.link}
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs text-accent underline hover:text-accent-light transition-colors"
+              >
+                Live site
+              </a>
+            </div>
+          </div>
+        )}
+      </Modal>
     </section>
   );
 };

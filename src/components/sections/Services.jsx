@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import { services } from '../../data/services';
 
-
 const Services = () => {
 
   return (
