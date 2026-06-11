@@ -18,11 +18,11 @@ const Footer = () => {
                 <p className="text-xs">Robotics Engineer</p>
             </div>
             <div className="flex flex-col gap-1 py-4 px-5 sm:px-10 border-b md:border-b-0 md:border-r border-accent">
-                <a href="" className="text-xs">Home</a>
-                <a href="" className="text-xs">Services</a>
-                <a href="" className="text-xs">About</a>
-                <a href="" className="text-xs">Projects</a>
-                <a href="" className="text-xs">Skills</a>
+                <a href="#" className="text-xs">Home</a>
+                <a href="#services" className="text-xs">Services</a>
+                <a href="#about" className="text-xs">About</a>
+                <a href="#projects" className="text-xs">Projects</a>
+                <a href="#skills" className="text-xs">Skills</a>
             </div>
             <div className="py-4 px-5 sm:px-10">
                 <p className="text-xs">Social media handles</p>
