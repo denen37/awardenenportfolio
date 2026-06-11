@@ -34,8 +34,7 @@ const handleSubmit = (e) => {
         <div className='flex flex-col items-center gap-4'>
         <h1 className='text-xl'>Contact <span className='text-accent'>Me.</span></h1>
         <p className='text-xs text-text-secondary max-w-[900px] text-center'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Excepturi tempora, libero hic laudantium nam dolorem aspernatur quaerat, 
+        Let's connect! Whether you have a project, collaboration opportunity, or question, feel free to get in touch. I'm always open to discussing new ideas and opportunities.
         </p>
       </div>
       <div className='mx-auto w-[90%] px-5 py-5 sm:px-10 sm:py-10 mt-5 rounded-lg bg-card'>

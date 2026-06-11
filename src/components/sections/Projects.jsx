@@ -11,6 +11,12 @@ const Projects = () => {
 
   const filteredProjects = projects.filter((p) => !activeTab || p.category === activeTab)
 
+  const truncateText = (text, maxLength = 150) => {
+    if (text.length <= maxLength) return text;
+  
+    return text.slice(0, maxLength).split(" ").slice(0, -1).join(" ");
+  };
+
   return (
     <section id="projects" className='bg-surface' data-aos="fade-up">
       <div className='flex flex-col items-start gap-4'>
@@ -30,10 +36,11 @@ const Projects = () => {
             .map((project, index) => (
               <div
                 key={index}
-                onClick={() => setSelectedProject(project)}
-                className="px-5 py-4 max-w-60 flex flex-col items-start gap-2 bg-card rounded-lg cursor-pointer"
+                className="px-5 py-4 max-w-60 flex flex-col items-start gap-2 bg-card rounded-lg"
               >
-                <div className="h-40 overflow-hidden rounded-t-lg">
+                <div 
+                  onClick={() => setSelectedProject(project)}
+                  className="h-40 overflow-hidden rounded-t-lg cursor-pointer">
                   <img
                     src={project.image}
                     alt={`${project.name} pic`}
@@ -45,7 +52,8 @@ const Projects = () => {
                 </h1>
         
                 <p className="text-xs text-text-secondary">
-                  {project.description}
+                  {truncateText(project.description)}
+                  <span className="text-accent"> ...</span>
                 </p>
               </div>
             ))
@@ -65,7 +73,7 @@ const Projects = () => {
             <div className="h-56 overflow-y-auto scrollbar-thin">
               <img
                 src={selectedProject.image}
-                alt={selectedProject.name}
+                alt={selectedProject.name + " pic"}
                 className="w-full rounded-lg object-cover"
               />
             </div>

@@ -3,29 +3,29 @@ import { images } from '../assets/images'
 export const projects = [
     {
         name: "Acepick",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate autem quae neque eaque minima? Ab molestias expedita quidem sit? Laboriosam maiores, impedit debitis soluta facere illum error minus in. Beatae?",
+        description: "Acepick is a platform that bridges the gap between clients and professionals. I developed the backend architecture, APIs, and database systems that power user management, job assignments, payments, and real-time platform operations.",
         image: images.project_acepick,
         category: "web_dev",
         github: "https://github.com/denen37",
         link: "#"
     },{
         name: "Tastetorial",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate autem quae neque eaque minima? Ab molestias expedita quidem sit? Laboriosam maiores, impedit debitis soluta facere illum error minus in. Beatae?",
+        description: "Tastetorial is an online learning platform designed for sharing knowledge through video content. I developed core backend services, including user authentication, content management, creator features, and database architecture.",
         image: images.project_tastetorial,
         category: "web_dev",
         github: "https://github.com/denen37",
         link: "#"
     },{
         name: "Evergrad",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate autem quae neque eaque minima? Ab molestias expedita quidem sit? Laboriosam maiores, impedit debitis soluta facere illum error minus in. Beatae?",
-        image: images.project_everygrad,
+        description: "EveryGrad is a student-focused platform that helps learners access academic opportunities and resources. I contributed to the backend architecture, database design, and deployment processes while leading a team of developers to deliver key platform features.",
+        image: null,
         category: "web_dev",
         github: "https://github.com/denen37",
         link: "#"
     },{
         name: "Scara Robot Prototype",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate autem quae neque eaque minima? Ab molestias expedita quidem sit? Laboriosam maiores, impedit debitis soluta facere illum error minus in. Beatae?",
-        image: images.project_tastetorial,
+        description: "Designed and developed a SCARA robot prototype for automation and robotic manipulation tasks. The project involved mechanical design, kinematic modeling, simulation, and control system implementation to achieve accurate and efficient movement.",
+        image: images.project_scara,
         category: "robotics",
         github: "https://github.com/denen37",
         link: "#"
