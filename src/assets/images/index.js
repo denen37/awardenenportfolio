@@ -10,6 +10,8 @@ import machine_learning from "./projects/machine_learning.svg"
 import project_acepick from "./projects/project_acepick.jpg"
 import project_tastetorial from "./projects/project_tastetorial.jpg"
 import project_scara from "./projects/scara_robot_prototype.jpg"
+import portfolio from "./projects/portfolio_image.png"
+import dashboard from "./projects/cdr_dashboard.png"
 
 export const images = {
   logo,
@@ -22,5 +24,7 @@ export const images = {
   machine_learning,
   project_acepick,
   project_tastetorial,
-  project_scara
+  project_scara,
+  portfolio,
+  dashboard,
 };

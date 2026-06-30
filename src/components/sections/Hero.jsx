@@ -24,12 +24,20 @@ const Hero = () => {
         </div>
         <div className='flex items-center gap-2 mt-20'>
           <p className='text-xs text-text-secondary'>Follow me on :</p>
-          <div className='flex items-center justify-center gap-2'>
-            <AiFillGithub className='size-3'/>
-            <AiFillLinkedin className='size-3'/>
-            <AiFillFacebook className='size-3'/>
-            <AiFillMail className='size-3'/>
-            <AiOutlineX className='size-3'/>
+          <div className='flex items-center justify-center gap-3'>
+            <a target='_blank' href='https://github.com/denen37' className='text-accent hover:text-accent-light transition-colors'>
+              <AiFillGithub className='size-4'/>
+            </a>
+            <a target='_blank' href='https://www.linkedin.com/in/awardenen/' className='text-accent hover:text-accent-light transition-colors'>
+              <AiFillLinkedin className='size-4'/>
+            </a>
+            {/* <AiFillFacebook className='size-3'/> */}
+            <a target='_blank' href='mailto:awardenen@gmail.com' className='text-accent hover:text-accent-light transition-colors'>
+                <AiFillMail className='size-4'/>
+            </a>
+            <a target='_blank' href='https://x.com/awardenen' className='text-accent hover:text-accent-light transition-colors'>
+              <AiOutlineX className='size-4'/>
+            </a>
           </div>
         </div>
       </div>

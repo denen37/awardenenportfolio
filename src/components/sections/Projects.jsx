@@ -9,7 +9,7 @@ const Projects = () => {
   const [activeTab, setActiveTab] = useState("");
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const filteredProjects = projects.filter((p) => !activeTab || p.category === activeTab)
+  const filteredProjects = projects.filter((p) => p.tags.includes(activeTab) || activeTab === "")
 
   const truncateText = (text, maxLength = 150) => {
     if (text.length <= maxLength) return text;
@@ -22,10 +22,9 @@ const Projects = () => {
       <div className='flex flex-col items-start gap-4'>
         <h1 className='text-xl'><span className='text-accent'>Projects</span> I have done.</h1>
         <p className='text-xs text-text-secondary max-w-[900px]'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Excepturi tempora, libero hic laudantium nam dolorem aspernatur quaerat, 
-            facere maiores sed amet? 
-            Ducimus a fugit doloremque ullam neque natus quasi hic.
+          These projects showcase my technical skills, problem-solving approach, and
+          ability to build complete solutions using modern technologies. 
+          From Web development to robotics applications, each project reflects hands-on development experience.
         </p>
       </div>
       <Tab activeTab={activeTab} onSelect={setActiveTab}/>
@@ -104,6 +103,13 @@ const Projects = () => {
               >
                 Live site
               </a>
+            </div>
+            <div className='mt-2 flex flex-wrap gap-2 items-center'>
+              {
+                selectedProject.skills.map((item => (
+                  <span className='px-2 py-0.5 border-accent border-1 text-accent text-xs rounded-full'>{item}</span>
+                )))
+              }
             </div>
           </div>
         )}

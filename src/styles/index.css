@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
@@ -45,9 +48,6 @@ All colors MUST be HSL.
   --color-border: #243A7A;
 }
 
-:root {
-  --navbar-height: 90px;
-}
 
 body, html{
   background-color: var(--color-background);
@@ -94,14 +94,11 @@ section, .footer-inner{
   background: var(--color-accent);
 } */
 
-@layer base {
-  * {
-    font-family: 'Maven Pro', sans-serif;
-  }
-}
 
 @layer components {
 
 }
 
+/* ---break---
+*/
 

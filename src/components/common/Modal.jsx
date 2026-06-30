@@ -3,6 +3,13 @@ import React from "react";
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
+  document.body.style.overflow = "hidden";
+
+  const handleClose = () => {
+    document.body.style.overflow = "auto";
+    onClose()
+  }
+
   return (
     <div
       className="
@@ -11,7 +18,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         bg-black/60 backdrop-blur-sm
         p-4
       "
-      onClick={onClose}
+      onClick={handleClose}
     >
       <div
         className="
@@ -29,7 +36,7 @@ const Modal = ({ isOpen, onClose, children }) => {
       >
         {/* Close Button */}
         <button
-          onClick={onClose}
+          onClick={handleClose}
           className="
             absolute
             top-1
