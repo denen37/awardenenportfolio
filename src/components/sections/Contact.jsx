@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {AiOutlineMail, AiOutlineWhatsApp, AiOutlineEnvironment} from "react-icons/ai";
+import { AiOutlineMail, AiOutlineWhatsApp, AiOutlineEnvironment } from "react-icons/ai";
 import emailjs from 'emailjs-com'
 
 const Contact = () => {
