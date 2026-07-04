@@ -14,6 +14,7 @@ import portfolio from "./projects/portfolio_image.png"
 import dashboard from "./projects/cdr_dashboard.png"
 import python_alx from "./certs/python_alx.png"
 import data_analytics_alx from "./certs/data_analytics_alx.png"
+import webdev_lsa from "./certs/webdev_lsa.png"
 
 export const images = {
   logo,
@@ -30,5 +31,6 @@ export const images = {
   portfolio,
   dashboard,
   python_alx,
-  data_analytics_alx
+  data_analytics_alx,
+  webdev_lsa
 };

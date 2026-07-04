@@ -2,6 +2,13 @@ import {images} from '@/assets/images/index'
 
 export const certificates = [
     {
+        image: images.webdev_lsa,
+        title: "Web Development Internship",
+        issuer: "London Success Academy",
+        date: "2026-07-03",
+        link: "https://drive.google.com/file/d/1bU7WEfEKmOPViZfu4JzyPgzB1EOBTD7f/view?usp=sharing"
+    },
+    {
         image: images.python_alx,
         title: "Python Programming",
         issuer: "ALX Africa",
