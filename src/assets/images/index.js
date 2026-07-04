@@ -12,6 +12,8 @@ import project_tastetorial from "./projects/project_tastetorial.jpg"
 import project_scara from "./projects/scara_robot_prototype.jpg"
 import portfolio from "./projects/portfolio_image.png"
 import dashboard from "./projects/cdr_dashboard.png"
+import python_alx from "./certs/python_alx.png"
+import data_analytics_alx from "./certs/data_analytics_alx.png"
 
 export const images = {
   logo,
@@ -27,4 +29,6 @@ export const images = {
   project_scara,
   portfolio,
   dashboard,
+  python_alx,
+  data_analytics_alx
 };

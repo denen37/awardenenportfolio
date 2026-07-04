@@ -9,6 +9,7 @@ import Contact from "./components/sections/Contact"
 import Footer from "./components/layout/Footer"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Certificates from "./components/sections/Certificates"
 
 function App() {
    useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
       <About/>
       <Projects/>
       <Skills/>
+      <Certificates/>
       <Contact/>
       <Footer/>
     </>

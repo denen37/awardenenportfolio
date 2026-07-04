@@ -8,12 +8,73 @@ const Contact = () => {
         email: "",
         message: ""
     })
+
+    const [errors, setErrors] = useState({})
+
+    
+
     const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
     const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
     const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
+const isFormValid = Object.values(formData).every(
+    value => value.trim() !== ""
+);
+
+const pushError = (field, error) => {
+    setErrors((prev) => ({
+        ...prev,
+        [field]: [...(prev[field] || []), error],
+        }));
+}
+
+const validate = (elementNames, elements) => {
+    let valid = true
+
+    elementNames.forEach((el) => {
+        for (const key in elements[el].validity) {
+                if(elements[el].validity[key]){
+                    if(elements[el].validity[key] !== 'valid')
+                        valid = false
+
+                    switch (key) {
+                        case "badInput":
+                            pushError(el, `${el} is invalid`)
+                            break;
+                        
+                        case "tooLong":
+                            pushError(el, `${el} is too long`)
+                            break;
+                        
+                        case "tooShort":
+                            pushError(el, `${el} is too short`)
+                            break;
+
+                        case "typeMismatch":
+                            pushError(el, `Invalid ${el}`)
+                            break;
+                        
+                        default:
+                            break;
+                    } 
+            }
+        }
+    })
+
+    return valid
+}
+
+
 const handleSubmit = (e) => {
     e.preventDefault();
+
+    setErrors({})
+
+    const form = e.currentTarget;
+
+    if (!validate(['email', 'name', 'message'], form.elements)) {
+        return
+    }
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
     .then((result) => {
@@ -29,12 +90,13 @@ const handleSubmit = (e) => {
     })
 }
 
+
   return (
     <section id="contact" className='bg-surface' data-aos="fade-up">
         <div className='flex flex-col items-center gap-4'>
         <h1 className='text-xl'>Contact <span className='text-accent'>Me.</span></h1>
         <p className='text-xs text-text-secondary max-w-[900px] text-center'>
-        Let's connect! Whether you have a project, collaboration opportunity, or question, feel free to get in touch. I'm always open to discussing new ideas and opportunities.
+            Let's connect! Whether you have a project, collaboration opportunity, or question, feel free to get in touch. I'm always open to discussing new ideas and opportunities.
         </p>
       </div>
       <div className='mx-auto w-[90%] px-5 py-5 sm:px-10 sm:py-10 mt-5 rounded-lg bg-card'>
@@ -66,27 +128,38 @@ const handleSubmit = (e) => {
                     </div>
                 </div>
             </div>
-            <form className='flex flex-col gap-2' onSubmit={handleSubmit}>
-                <div className="flex flex-col gap-1">
-                    <label
-                        htmlFor="name"
-                        className="text-xs font-medium text-text-primary"
-                    >
-                        Full Name
-                    </label>
+            <form noValidate className='flex flex-col gap-2' onSubmit={handleSubmit}>
+                <div className="flex flex-col gap-0.5">
+                    <div className='flex flex-col gap-1'>
+                        <label
+                            htmlFor="name"
+                            className="text-xs font-medium text-text-primary"
+                        >
+                            Full Name
+                        </label>
 
-                    <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        required
-                        placeholder="John Doe"
-                        className="w-full rounded-lg border border-surface bg-background px-3 py-2 text-sm text-text-primary outline-none transition-all duration-300 placeholder:text-text-secondary focus:border-accent focus:ring-2 focus:ring-accent/20 placeholder:text-text-muted"/>
+                        <input
+                            id="name"
+                            name="name"
+                            type="text"
+                            value={formData.name}
+                            minLength={3}
+                            onChange={(e) => setFormData({...formData, name: e.target.value})}
+                            required
+                            placeholder="John Doe"
+                            className="w-full rounded-lg border border-surface bg-background px-3 py-2 text-sm text-text-primary outline-none transition-all duration-300 placeholder:text-text-secondary focus:border-accent focus:ring-2 focus:ring-accent/20 placeholder:text-text-muted"/>
+                    </div>
+                    <div>
+                        {
+                            errors?.name && errors.name.map((item, index) => (
+                                <p key={index} className='text-xs text-red-500'>{item}</p>
+                            ))
+                        }
+                    </div>
                 </div>
 
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-0.5">
+                    <div className='flex flex-col gap-1'>
                     <label
                         htmlFor="email"
                         className="text-xs font-medium text-text-primary"
@@ -103,9 +176,18 @@ const handleSubmit = (e) => {
                         required
                         placeholder="email@example.com"
                         className="w-full rounded-lg border border-surface bg-background px-3 py-2 text-sm text-text-primary outline-none transition-all duration-300 placeholder:text-text-secondary focus:border-accent focus:ring-2 focus:ring-accent/20 placeholder:text-text-muted"/>
+                    </div>
+                    <div>
+                        {
+                            errors?.email && errors.email.map((item, index) => (
+                                <p key={index} className='text-xs text-red-500'>{item}</p>
+                            ))
+                        }
+                    </div>
                 </div>
 
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-0.5">
+                    <div className='flex flex-col gap-1'>
                     <label
                         htmlFor="message"
                         className="text-xs font-medium text-text-primary"
@@ -117,16 +199,34 @@ const handleSubmit = (e) => {
                         id="message"
                         name="message"
                         value={formData.message}
+                        minLength={5}
                         onChange={(e) => setFormData({...formData, message: e.target.value})}
                         required
                         placeholder="Message..."
                         className="w-full rounded-lg border border-surface bg-background px-3 py-2 text-sm text-text-primary outline-none transition-all duration-300 placeholder:text-text-secondary focus:border-accent focus:ring-2 focus:ring-accent/20 placeholder:text-text-muted"
                         rows={5}
                         />
+                    </div>
+                    <div>
+                        {
+                            errors?.message && errors.message.map((item, index) => (
+                                <p key={index} className='text-xs text-red-500'>{item}</p>
+                            ))
+                        }
+                    </div>
                 </div>
-
                 <div className='mt-2 flex justify-center'>
-                    <button type="submit" className='px-4 py-2 rounded-sm bg-accent text-background cursor-pointer hover:bg-accent-light active:scale-90 transition-all duration-300 ease-in-out'>Send Message</button>
+                <button
+                    disabled={!isFormValid}
+                    type="submit"
+                    className="px-4 py-2 rounded-sm bg-accent text-background 
+                                cursor-pointer hover:bg-accent-light active:scale-90
+                                transition-all duration-300 ease-in-out
+                                disabled:opacity-50 disabled:cursor-not-allowed
+                                disabled:hover:bg-accent disabled:active:scale-100"
+                    >
+                    Send Message
+                    </button>
                 </div>
             </form>
         </div>
